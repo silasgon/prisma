@@ -5,6 +5,7 @@ import { CreateProductController } from "./controllers/CreateProductController";
 import { CreateProductWithExistCategory } from "./controllers/CreateProductWithExistCategory";
 import { FindCategoryController } from "./controllers/FindCategoryController";
 import { FindProductController } from "./controllers/FindProductController";
+import { SearchSymbolByKeywordController } from "./controllers/SeachSymbolByKeywordsController";
 
 const router = Router();
 
@@ -16,6 +17,8 @@ const createProductWithExistCategory = new CreateProductWithExistCategory();
 const findProduct = new FindProductController();
 const findCategory = new FindCategoryController();
 
+const searchSymbol = new SearchSymbolByKeywordController();
+
 router.post('/product', createProduct.handle);
 router.post('/category', createCategory.handle);
 router.post('/categoryProduct', createProductCategory.handle);
@@ -23,5 +26,6 @@ router.post('/productWithCategory',createProductWithExistCategory.handle);
 
 router.get('/product/:id', findProduct.handle);
 router.get('/category/:id', findCategory.handle);
+router.get('/symbol', searchSymbol.handle);
 
 export { router }

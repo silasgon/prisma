@@ -9,6 +9,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234
     volumes:
-      - D:\Projetos\Javascript\Rocketseat\prisma\db:/var/lib/postgress/data
+      - data:/var/lib/postgress/data
