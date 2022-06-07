@@ -1,0 +1,14 @@
+version: '3.5'
+
+volumes:
+  data:
+
+services:
+  database:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - D:\Projetos\Javascript\Rocketseat\prisma\db:/var/lib/postgress/data
